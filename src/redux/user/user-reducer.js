@@ -1,3 +1,6 @@
+import { UserActionTypes } from './user.types';
+
+
 const INITIAL_STATE = {
     currentUser: null
 }
@@ -5,9 +8,9 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE , action) => {
     switch (action.type) {
-        case 'SET_CURRENT_USER':
+        case UserActionTypes.SET_CURRENT_USER:
             return {
-             ...state, 
+             ...state,
              currentUser: action.payload
             }
 
@@ -20,7 +23,7 @@ const userReducer = (state = INITIAL_STATE , action) => {
 export default userReducer;
 
 /*Create the action that triggers the correct case of our swtich statement
-'SET_CURRENT_USER' is the action that we expect it to be so it sets the current 
+'SET_CURRENT_USER' is the action that we expect it to be so it sets the current
 user value inside our userReducer object as the payload of this action object
-we are going to create action creator functions. See User folder and file 
+we are going to create action creator functions. See User folder and file
 user.actions.js*/
